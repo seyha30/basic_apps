@@ -20,12 +20,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _index = 0;
   final List<TextBlock> textBlocks = [
-    TextBlock(Colors.red, "Every"),
-    TextBlock(Colors.green, "SchoolBoy"),
-    TextBlock(Colors.green, "\nKnows"),
-    TextBlock(Colors.greenAccent, "Who"),
-    TextBlock(Colors.greenAccent, "\nimprisoned"),
-    TextBlock(Colors.greenAccent, "\nMontezuma"),
+    TextBlock(Colors.red, "Cat"),
+    TextBlock(Colors.green, "\nCow"),
+    TextBlock(Colors.green, "\nPig"),
+    TextBlock(Colors.greenAccent, "\nDuck"),
+    TextBlock(Colors.greenAccent, "\nBird"),
+    TextBlock(Colors.greenAccent, "\nDog"),
   ];
   void _incrementCounter() {
     setState(() {
@@ -37,11 +37,18 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final List<TextSpan> textSpans = List<TextSpan>();
+    for (var i = 0; i < _index; i++) {
+      TextBlock textBlock = textBlocks[i];
+      textSpans.add(TextSpan(
+          text: textBlock.text,
+          style: TextStyle(color: textBlock.color, fontSize: 32.0)));
+    }
     return Scaffold(
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [],
+            children: [Text.rich(TextSpan(children: textSpans))],
           ),
         ),
         floatingActionButton:
