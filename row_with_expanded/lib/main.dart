@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(RowWithExpanded());
+void main() => runApp(RowMainAxisAlignment());
 
-class RowWithExpanded extends StatelessWidget {
+class RowMainAxisAlignment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,12 +27,12 @@ class MyHome extends StatelessWidget {
                 const Text('is'),
                 const Text('center'),
               ]),
+              const Text("1st child expanded:"),
               Row(
-                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   const Text("MainAxisAlignment"),
                   const Text('is'),
-                  const Text('end'),
+                  const Expanded(child: Text('end')),
                 ],
               ),
               Row(
