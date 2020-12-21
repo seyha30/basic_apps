@@ -83,6 +83,9 @@ class _HomeWidgetState extends State<HomeWidget> {
       )
     ],
   );
+  Row closeButtonRow = Row(
+mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+children: <Widget>[CloseButton(), const Text("CloseButton")]); 
 
   @override
   Widget build(BuildContext context) {
@@ -100,6 +103,7 @@ class _HomeWidgetState extends State<HomeWidget> {
             outLinButton,
             backButton,
             floatingActionButton,
+            closeButtonRow
           ],
         ),
       ),
