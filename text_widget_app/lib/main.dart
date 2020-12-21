@@ -51,7 +51,11 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [Text.rich(TextSpan(children: textSpans))],
           ),
         ),
-        floatingActionButton:
-            FloatingActionButton(onPressed: _incrementCounter));
+        floatingActionButton:FloatingActionButton(
+          onPressed: _incrementCounter,
+          tooltip: 'Increment',
+          child: Icon(Icons.note_add),
+          )
+          );
   }
 }
