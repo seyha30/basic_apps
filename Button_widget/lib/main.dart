@@ -85,7 +85,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   );
   Row closeButtonRow = Row(
 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-children: <Widget>[CloseButton(), const Text("CloseButton")]); 
+children: <Widget>[CloseButton(onPressed: () => debugPrint('CloseButton Pressed'),), const Text("CloseButton")]); 
 
   @override
   Widget build(BuildContext context) {
