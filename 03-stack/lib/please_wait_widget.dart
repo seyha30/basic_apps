@@ -9,7 +9,7 @@ class PleaseWaitWidget extends StatelessWidget {
           strokeWidth: 8,
         ),
       ),
-      color: Colors.greenAccent.withOpacity(0.3),
+      color: Colors.grey.withOpacity(0.2),
     );
   }
 }
