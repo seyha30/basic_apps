@@ -30,7 +30,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+
   bool _pleaseWait = false;
 
   bool _togglePleaseWait() {
@@ -39,16 +39,11 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     List<Widget> childWidgets =
-        _pleaseWait ? [widget._pleaseWaitWidget] : [widget._appWidget];
+        _pleaseWait ? [widget._pleaseWaitWidget ,widget._appWidget] : [widget._appWidget];
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
