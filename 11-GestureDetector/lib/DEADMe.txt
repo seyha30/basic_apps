@@ -1,0 +1,5 @@
+“GestureDetector
+A widget that detects gestures.
+Often used to add event listeners (like ‘onTop’) onto Widgets that don’t have that capability.”
+
+Excerpt From: Mark Clow. “Learn Google Flutter Fast: 65 Example Apps.” Apple Books. 
