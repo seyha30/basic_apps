@@ -33,30 +33,25 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   Animation<double> _animation;
-  AnimationController _animationController;
+  AnimationController _controller;
 
-  void _incrementCounter() {
-    setState(() {
-      _animationController = AnimationController(
-        duration: const Duration(
-          seconds: 2,
-        ),
-      );
-      _animation = Tween<double>(
-        begin: 0.0,
-        end: 1.0,
-      ).animate(
-        _animationController,
-      )..addListener(() {
-          setState(() {});
-        });
-    });
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    );
+    _animation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller)
+      ..addListener(() {
+        setState(() {});
+      });
   }
 
   @override
   Widget build(BuildContext context) {
     void _spin() {
-      _animationController.forward(from: 0.0);
+      _controller.forward(from: 0.0);
     }
 
     return Scaffold(
@@ -65,7 +60,8 @@ class _MyHomePageState extends State<MyHomePage>
       ),
       body: Container(
         child: new RotationTransition(
-          turns: AlwaysStoppedAnimation(_animation.value),
+          // turns: AlwaysStoppedAnimation(_animation.value),
+          turns: AlwaysStoppedAnimation(98),
           child: Icon(
             Icons.airplanemode_active,
             size: 150.0,
@@ -83,7 +79,7 @@ class _MyHomePageState extends State<MyHomePage>
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _spin,
         tooltip: 'Increment',
         child: Icon(
           Icons.add,
